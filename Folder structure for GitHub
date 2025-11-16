@@ -1,0 +1,16 @@
+base-checkin-preconfigured/
+│
+├─ pages/
+│   ├─ index.tsx
+│   └─ api/
+│       ├─ nonce.ts
+│       ├─ verify.ts
+│       ├─ checkin.ts
+│       └─ totals.ts
+├─ contracts/
+│   └─ CheckinLedger.sol
+├─ public/
+│   └─ frame-image.png  (optional placeholder image)
+├─ frame.json
+├─ package.json
+└─ .env.local
