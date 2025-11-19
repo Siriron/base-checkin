@@ -22,7 +22,7 @@ export default function Home() {
     }
   };
 
-  // Handle check-in
+  // Handle check-in with signature
   const handleCheckin = async () => {
     if (!address) {
       alert("Please connect your wallet first");
@@ -30,11 +30,17 @@ export default function Home() {
     }
 
     try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const messageToSign = `Check-in for ${address}`;
+      const signature = await signer.signMessage(messageToSign);
+
       const res = await fetch("/api/checkin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ address, total: 1 }),
+        body: JSON.stringify({ address, total: 1, signature }),
       });
+
       const data = await res.json();
       setMessage(data.message);
     } catch (err) {
