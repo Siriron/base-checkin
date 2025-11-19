@@ -1,12 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import { ethers } from "ethers";
 import CheckinLedgerABI from "../../contracts/CheckinLedger.json";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
   const provider = new ethers.JsonRpcProvider(process.env.NEXT_PUBLIC_BASE_RPC_URL);
   const wallet = new ethers.Wallet(process.env.OWNER_PRIVATE_KEY, provider);
   const contract = new ethers.Contract(
-    process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,
+    process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
     CheckinLedgerABI,
     wallet
   );
