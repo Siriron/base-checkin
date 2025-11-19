@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Optional: Verify signature if provided
+    // Verify signature if provided
     if (signature) {
       const message = `Check-in for ${address}`;
       const signer = ethers.verifyMessage(message, signature);
