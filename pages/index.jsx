@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ethers } from "ethers";
 import CheckinLedgerABI from "../contracts/CheckinLedger.json";
 
-const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_HERE"; // Replace with your deployed contract
+const CONTRACT_ADDRESS = "0xd5b3daa07b2852b441d7fe41b856e99428c2d263";
 
 export default function Home() {
   const [message, setMessage] = useState("");
@@ -21,6 +21,8 @@ export default function Home() {
       const accounts = await provider.send("eth_requestAccounts", []);
       setAddress(accounts[0]);
       setMessage(`Wallet connected: ${accounts[0]}`);
+
+      // Fetch current check-in total
       fetchTotal(accounts[0], provider);
     } catch (err) {
       console.error("Wallet connection failed:", err);
@@ -40,7 +42,7 @@ export default function Home() {
     }
   };
 
-  // Handle check-in
+  // Handle check-in (user pays gas)
   const handleCheckin = async () => {
     if (!address) {
       alert("Please connect your wallet first");
@@ -51,7 +53,7 @@ export default function Home() {
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
 
-      // Optional: sign a message for proof
+      // Optional: sign message for proof
       const verificationMessage = `Check-in proof for ${address}`;
       const signature = await signer.signMessage(verificationMessage);
       console.log("Signed message:", signature);
@@ -64,7 +66,7 @@ export default function Home() {
       await tx.wait();
       setMessage(`Check-in successful! Tx hash: ${tx.hash}`);
 
-      // Update total after successful check-in
+      // Update total after check-in
       fetchTotal(address, provider);
     } catch (err) {
       console.error("Check-in failed:", err);
