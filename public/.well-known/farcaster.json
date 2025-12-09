@@ -1,3 +1,13 @@
 {
-  "placeholder": true
+  "accountAssociation": {
+    "signature": "",
+    "message": ""
+  },
+  "miniapp": {
+    "name": "Base Streaks",
+    "url": "https://base-checkin-drlw.vercel.app"
+  },
+  "baseBuilder": {
+    "ownerAddress": "0xBe2D4809c493Cc865140cdE461c9bf5a4718a2F5"
+  }
 }
