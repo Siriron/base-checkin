@@ -1,0 +1,32 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "baseBuilder": {
+    "ownerAddress": "0xBe2D4809c493Cc865140cdE461c9bf5a4718a2F5"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Base Streaks",
+    "homeUrl": "https://base-checkins.vercel.app",
+    "iconUrl": "https://base-checkins.vercel.app/icon.png",
+    "splashImageUrl": "https://base-checkins.vercel.app/splash.png",
+    "splashBackgroundColor": "#ffffff",
+    "primaryCategory": "utility",
+    "tags": ["productivity","checkin","crypto"],
+    "description": "Track your daily check-ins and streaks on Base.",
+    "subtitle": "Daily streak tracker",
+    "tagline": "Stay consistent daily",
+    "heroImageUrl": "https://base-checkins.vercel.app/og.png",
+    "screenshotUrls": [
+      "https://base-checkins.vercel.app/screenshots/1.png",
+      "https://base-checkins.vercel.app/screenshots/2.png"
+    ],
+    "ogTitle": "Base Streaks",
+    "ogDescription": "A simple daily check‑in mini‑app for Base",
+    "ogImageUrl": "https://base-checkins.vercel.app/og.png",
+    "noindex": false
+  }
+}
