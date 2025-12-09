@@ -1,13 +1,4 @@
-{
-  "accountAssociation": {
-    "signature": "<YOUR_WALLET_SIGNATURE_HERE>",
-    "message": "I am the owner of the Base Streaks mini-app and this message links my wallet 0xBe2D4809c493Cc865140cdE461c9bf5a4718a2F5 to it."
-  },
-  "miniapp": {
-    "name": "Base Streaks",
-    "url": "https://base-checkin-drlw.vercel.app"
-  },
+
   "baseBuilder": {
     "ownerAddress": "0xBe2D4809c493Cc865140cdE461c9bf5a4718a2F5"
   }
-}
